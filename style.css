@@ -1,0 +1,479 @@
+/* Tema warna (maks 5) */
+:root {
+  --bg: #faf5e6; /* krem */
+  --surface: #f3ede1; /* beige terang */
+  --text: #1f2937; /* abu kehitaman */
+  --primary: #6b4f3b; /* cokelat kopi */
+  --accent: #2f6b3b; /* hijau hutan */
+  --radius: .75rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth; 
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--surface);
+  border-bottom: 1px solid #e7dfd2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .75rem 1rem;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  text-decoration: none;
+  color: var(--text);
+}
+.logo {
+  width: 36px;
+  height: 36px;
+}
+.brand-text {
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+.nav {
+  display: flex;
+  gap: .5rem;
+}
+.nav-link {
+  text-decoration: none;
+  color: var(--text);
+  padding: .5rem .75rem;
+  border-radius: .5rem;
+}
+.nav-link:hover {
+  background: #eae3d6;
+}
+.nav-link.is-active {
+  background: var(--primary);
+  color: white;
+}
+
+/* Hero */
+/* style.css (Perbaikan di bagian Hero, sekitar baris 59) */
+
+/* Hero */
+.hero {
+  position: relative; /* Penting agar gambar latar bisa absolute di dalamnya */
+  padding: 3rem 1rem;
+  /* Hapus atau ganti background lama */
+  background: var(--bg); /* Atur ulang background menjadi warna solid jika transisi belum aktif */
+  /* background: linear-gradient(0deg, var(--surface), var(--bg)); */ /* HAPUS INI */
+  
+  /* Tambahkan tinggi minimum agar hero terlihat saat gambar dimuat */
+  min-height: 90vh; 
+  display: flex; /* Untuk menengahkan konten hero secara vertikal */
+  align-items: center; 
+  justify-content: center;
+  z-index: 1; /* Pastikan konten hero (teks) berada di atas gambar */
+}
+
+.hero-inner {
+  color: #e7dfd2;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 5; /* Pastikan inner content paling atas */
+}
+
+/* GAYA UNTUK BACKGROUND SLIDESHOW */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* PENTING: tempatkan di belakang konten hero */
+}
+
+.hero-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0; /* Semua gambar dimulai tersembunyi */
+  transition: opacity 1s ease-in-out; /* Transisi untuk pergantian yang halus */
+}
+
+.hero-background-image.active {
+  opacity: 1; /* Gambar yang sedang aktif akan terlihat */
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  padding: .625rem 1rem;
+  border-radius: .6rem;
+}
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+.btn-primary:hover {
+  filter: brightness(0.95);
+}
+.btn-secondary {
+  background: var(--primary);
+  color: white;
+}
+.btn-secondary:hover {
+  filter: brightness(0.95);
+}
+
+/* Sections */
+
+.intro { /* Tambahkan selector untuk section intro */
+  text-align: center; /* Tengahkan semua teks di dalam section ini */
+}
+
+.contact .container { /* Tambahkan .contact .container untuk menargetkan halaman kontak */
+  text-align: center; /* Tengahkan semua teks di dalam kontainer kontak */
+}
+
+.container {
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.section-title {
+  font-family: Georgia;
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  margin: 1.5rem 0 1rem;
+}
+.body {
+  margin: .25rem 0 1rem;
+}
+.muted {
+  color: #6b7280;
+  font-size: .95rem;
+}
+
+/* Map */
+.map-section {
+  padding: 1rem 0 2rem;
+}
+.map-wrapper {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid #e7dfd2;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.map-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Hotspots (approx position) */
+.hotspot {
+  position: absolute;
+  width: 5%;
+  height: 5%;
+  border: 2px solid rgba(43, 96, 59, 0.6);
+  border-radius: 999px;
+  background: rgba(47, 107, 59, 0.15);
+  cursor: pointer;
+  outline: none;
+}
+.hotspot:focus {
+  box-shadow: 0 0 0 3px rgba(47, 107, 59, 0.35);
+}
+/* Positions (responsif kasar, pakai % berdasarkan gambar siluet) */
+.hs-sumatra {
+  left: 11%;
+  top: 40%;
+}
+.hs-java {
+  left: 37%;
+  top: 60%;
+}
+.hs-kalimantan {
+  left: 40%;
+  top: 40%;
+}
+.hs-sulawesi {
+  left: 55%;
+  top: 45%;
+}
+.hs-bali-ntb-ntt {
+  left: 55%;
+  top: 60%;
+}
+.hs-maluku {
+  left: 70%;
+  top: 45%;
+}
+.hs-papua {
+  left: 85%;
+  top: 47%;
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  min-width: 200px;
+  max-width: 260px;
+  background: white;
+  color: var(--text);
+  border: 1px solid #e7dfd2;
+  border-radius: .6rem;
+  padding: 0.5rem 0.75rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transform: translate(-50%, -110%);
+  pointer-events: none;
+}
+.tooltip h4 {
+  margin: .25rem 0 .25rem;
+  font-size: 1rem;
+}
+.tooltip ul {
+  margin: .25rem 0;
+  padding-left: 1.1rem;
+}
+.tooltip li {
+  margin: .125rem 0;
+}
+
+/* Showcase grid */
+.showcase {
+  padding: 2rem 0;
+}
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 960px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.grid-3 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  max-width: 900px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+@media (min-width: 800px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 1px solid #e7dfd2;
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.card .card-body {
+  /* Di halaman kontak, kita ingin flex-basis penuh agar formulir punya ruang */
+  flex-grow: 1; 
+  padding: 1rem; /* Tambahkan sedikit padding internal */
+}
+
+.card .card-title {
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+.card-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+.card-body {
+  padding: .75rem;
+}
+.card-title {
+  margin: .25rem 0 .25rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+.card-meta {
+  margin: 0 0 .5rem;
+  color: #6b7280;
+}
+
+/* Forms */
+.form {
+  display: grid;
+  gap: .75rem;
+}
+.field {
+  display: grid;
+  gap: .35rem;
+}
+.label {
+  font-weight: 600;
+}
+input[type="text"] {
+  width: 100%;
+  padding: .6rem .7rem;
+  border-radius: .6rem;
+  border: 1px solid #d7cfbf;
+  background: var(--surface);
+}
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(47, 107, 59, 0.2);
+}
+.form-status {
+  min-height: 1.25rem;
+  margin: .25rem 0 0;
+}
+
+/* Modal */
+.modal {
+  border: none;
+  border-radius: var(--radius);
+  padding: 0;
+  width: min(960px, 95vw);
+}
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+}
+.modal-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding: 0;
+  background: white;
+}
+@media (min-width: 900px) {
+  .modal-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.modal-media {
+  background: #000;
+}
+.modal-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: 480px;
+}
+.modal-content {
+  padding: 1rem;
+}
+.modal-title {
+  margin: .25rem 0 .25rem;
+}
+.modal-origin {
+  margin: .125rem 0 .5rem;
+  color: #6b7280;
+}
+.modal-notes {
+  margin: .5rem 0;
+  padding-left: 1.2rem;
+}
+.modal-close {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: .5rem;
+  padding: .35rem .5rem;
+  cursor: pointer;
+}
+
+/* Footer */
+.site-footer {
+  padding: 1.5rem 1rem;
+  text-align: center;
+  color: #6b7280;
+}
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* style.css (Perbaikan/Penambahan di bagian Modal, sekitar baris 417) */
+
+/* Modal */
+.modal {
+  border: none;
+  border-radius: var(--radius);
+  padding: 0;
+  width: min(960px, 95vw);
+  
+  /* PERBAIKAN 1: Tambahkan transisi untuk properti umum */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  
+  opacity: 0; /* Mulai dengan opacity 0 */
+  transform: scale(0.95); /* Mulai sedikit menyusut */
+}
+
+/* PERBAIKAN 2: Gaya saat modal sedang terbuka (menggunakan pseudo-class 'open') */
+.modal[open] {
+  opacity: 1; /* Transisikan ke opacity 1 */
+  transform: scale(1); /* Transisikan ke ukuran normal */
+}
+
+/* PERBAIKAN 3: Membuat transisi backdrop lebih halus */
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+  transition: opacity 0.3s ease-in-out; 
+  opacity: 0; /* Mulai backdrop tersembunyi */
+}
+
+/* Gaya saat modal terbuka untuk backdrop */
+.modal[open]::backdrop {
+  opacity: 1; /* Transisikan ke opacity penuh saat terbuka */
+}
+
+/* ... Kode CSS lainnya ... */
