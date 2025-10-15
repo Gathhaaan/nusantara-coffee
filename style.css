@@ -73,23 +73,17 @@ body {
   color: white;
 }
 
-/* Hero */
-/* style.css (Perbaikan di bagian Hero, sekitar baris 59) */
 
 /* Hero */
 .hero {
-  position: relative; /* Penting agar gambar latar bisa absolute di dalamnya */
+  position: relative; 
   padding: 3rem 1rem;
-  /* Hapus atau ganti background lama */
-  background: var(--bg); /* Atur ulang background menjadi warna solid jika transisi belum aktif */
-  /* background: linear-gradient(0deg, var(--surface), var(--bg)); */ /* HAPUS INI */
-  
-  /* Tambahkan tinggi minimum agar hero terlihat saat gambar dimuat */
+  background: var(--bg); 
   min-height: 90vh; 
-  display: flex; /* Untuk menengahkan konten hero secara vertikal */
+  display: flex;
   align-items: center; 
   justify-content: center;
-  z-index: 1; /* Pastikan konten hero (teks) berada di atas gambar */
+  z-index: 1; 
 }
 
 .hero-inner {
@@ -97,10 +91,10 @@ body {
   max-width: 960px;
   margin: 0 auto;
   text-align: center;
-  z-index: 5; /* Pastikan inner content paling atas */
+  z-index: 5; 
 }
 
-/* GAYA UNTUK BACKGROUND SLIDESHOW */
+
 .hero-background {
   position: absolute;
   top: 0;
@@ -108,7 +102,7 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: -1; /* PENTING: tempatkan di belakang konten hero */
+  z-index: -1; 
 }
 
 .hero-background-image {
@@ -118,12 +112,12 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0; /* Semua gambar dimulai tersembunyi */
-  transition: opacity 1s ease-in-out; /* Transisi untuk pergantian yang halus */
+  opacity: 0; 
+  transition: opacity 1s ease-in-out; 
 }
 
 .hero-background-image.active {
-  opacity: 1; /* Gambar yang sedang aktif akan terlihat */
+  opacity: 1;
 }
 
 /* Buttons */
@@ -155,12 +149,12 @@ body {
 
 /* Sections */
 
-.intro { /* Tambahkan selector untuk section intro */
-  text-align: center; /* Tengahkan semua teks di dalam section ini */
+.intro { 
+  text-align: center;
 }
 
-.contact .container { /* Tambahkan .contact .container untuk menargetkan halaman kontak */
-  text-align: center; /* Tengahkan semua teks di dalam kontainer kontak */
+.contact .container { 
+  text-align: center; 
 }
 
 .container {
@@ -442,8 +436,6 @@ input[type="text"]:focus {
   text-wrap: pretty;
 }
 
-/* style.css (Perbaikan/Penambahan di bagian Modal, sekitar baris 417) */
-
 /* Modal */
 .modal {
   border: none;
@@ -451,29 +443,27 @@ input[type="text"]:focus {
   padding: 0;
   width: min(960px, 95vw);
   
-  /* PERBAIKAN 1: Tambahkan transisi untuk properti umum */
+  
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   
-  opacity: 0; /* Mulai dengan opacity 0 */
-  transform: scale(0.95); /* Mulai sedikit menyusut */
+  opacity: 0; 
+  transform: scale(0.95); 
 }
 
-/* PERBAIKAN 2: Gaya saat modal sedang terbuka (menggunakan pseudo-class 'open') */
+
 .modal[open] {
-  opacity: 1; /* Transisikan ke opacity 1 */
-  transform: scale(1); /* Transisikan ke ukuran normal */
+  opacity: 1; 
+  transform: scale(1); 
 }
 
 /* PERBAIKAN 3: Membuat transisi backdrop lebih halus */
 .modal::backdrop {
   background: rgba(0, 0, 0, 0.4);
   transition: opacity 0.3s ease-in-out; 
-  opacity: 0; /* Mulai backdrop tersembunyi */
+  opacity: 0;
 }
 
-/* Gaya saat modal terbuka untuk backdrop */
+
 .modal[open]::backdrop {
-  opacity: 1; /* Transisikan ke opacity penuh saat terbuka */
+  opacity: 1; 
 }
-
-/* ... Kode CSS lainnya ... */
