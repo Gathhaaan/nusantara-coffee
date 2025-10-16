@@ -190,6 +190,39 @@ function setupShowcaseModal() {
   }
 }
 
+function setupCategoryTabs() {
+  const tabs = document.querySelectorAll(".tabs .tab");
+  const grid = document.querySelector(".grid");
+  if (!tabs.length || !grid) return;
+  const cards = Array.from(grid.querySelectorAll(".card"));
+
+  const setActive = (selected) => {
+    tabs.forEach((t) => {
+      const isActive = t === selected;
+      t.classList.toggle("is-active", isActive);
+      t.setAttribute("aria-selected", isActive ? "true" : "false");
+    });
+  };
+
+  const applyFilter = (category) => {
+    cards.forEach((card) => {
+      const cat = card.getAttribute("data-category") || "all";
+      if (category === "all" || cat === category) {
+        card.classList.remove("hidden");
+      } else {
+        card.classList.add("hidden");
+      }
+    });
+  };
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      setActive(tab);
+      applyFilter(tab.getAttribute("data-filter"));
+    });
+  });
+}
+
 function setupContactForms() {
   document.querySelectorAll("[data-contact-form]").forEach((form) => {
     form.addEventListener("submit", (e) => {
@@ -288,4 +321,5 @@ document.addEventListener("DOMContentLoaded", () => {
   setupShowcaseModal();
   setupContactForms();
   setupHeroSlideshow(); // Panggil fungsi baru
+  setupCategoryTabs(); // fungsi tab kategori
 });
