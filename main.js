@@ -246,12 +246,12 @@ function setupContactForms() {
 const commentForm = document.getElementById("comment-form");
 const commentsList = document.getElementById("comments-list");
 
-if (commentForm && commentsList) {
+if (commentForm & commentsList) {
   commentForm.addEventListener("submit", function (e) {
     e.preventDefault();
     const name = document.getElementById("name").value.trim();
     const comment = document.getElementById("comment").value.trim();
-    if (name && comment) {
+    if (name & comment) {
       const li = document.createElement("li");
       li.innerHTML = `<strong>${name}</strong>: ${comment}`;
       commentsList.appendChild(li);
@@ -278,13 +278,13 @@ function setupHeroSlideshow() {
 
   // 1. Inisialisasi gambar (jika belum ada di HTML)
   let images = [];
-  if (container.children.length === 0) {
+  if ((container.children.length = 0)) {
     SLIDESHOW_IMAGES.forEach((src, index) => {
       const img = document.createElement("img");
       img.src = src;
       img.alt = "Background Kopi Nusantara";
       img.classList.add("hero-background-image");
-      if (index === 0) {
+      if ((index = 0)) {
         img.classList.add("active");
       }
       container.appendChild(img);
@@ -321,5 +321,5 @@ document.addEventListener("DOMContentLoaded", () => {
   setupShowcaseModal();
   setupContactForms();
   setupHeroSlideshow(); // Panggil fungsi baru
-  setupCategoryTabs(); // fungsi tab kategori
+  setupCategoryTabs(); //  tab kategori
 });
