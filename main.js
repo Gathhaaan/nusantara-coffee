@@ -189,7 +189,7 @@ function setupShowcaseModal() {
     closeBtn.addEventListener("click", () => modal.close());
   }
 }
-
+// Tab kategori di showcase
 function setupCategoryTabs() {
   const tabs = document.querySelectorAll(".tabs .tab");
   const grid = document.querySelector(".grid");
@@ -222,7 +222,6 @@ function setupCategoryTabs() {
     });
   });
 }
-
 function setupContactForms() {
   document.querySelectorAll("[data-contact-form]").forEach((form) => {
     form.addEventListener("submit", (e) => {
