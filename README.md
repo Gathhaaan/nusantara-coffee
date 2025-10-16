@@ -36,7 +36,7 @@ Fitur interaktif seperti peta menggunakan elemen button (.hotspot) dengan atribu
 
 Modal detail kopi diimplementasikan menggunakan elemen <dialog> yang merupakan praktik terbaik HTML5 modern.
 
-article.html: Menggunakan elemen <article> sebagai wadah utama untuk konten editorial dan <h2> hingga <h4> untuk hierarki judul yang tepat.
+article.html: Menggunakan elemen <article> sebagai wadah utama untuk konten editorial dan (<h2>) hingga (<h4>) untuk hierarki judul yang tepat.
 
 Fitur baru Article Slider diimplementasikan menggunakan <div> dengan kelas .article-slider dan navigasi tombol (.slider-btn) untuk kontrol manual.
 
