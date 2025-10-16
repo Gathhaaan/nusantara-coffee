@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
   <head>
     <meta charset="utf-8" />
@@ -29,10 +29,7 @@
         </div>
         <div class="hero-inner">
           <h1 class="hero-title">Jelajah Kopi Nusantara</h1>
-          <p class="hero-subtitle text-pretty">
-            Dari Sabang sampai Merauke, setiap pulau menghadirkan karakter rasa unik. Temukan cerita di balik
-            setiap biji kopi Indonesia.
-          </p>
+          <p class="hero-subtitle text-pretty">Dari Sabang sampai Merauke, setiap pulau menghadirkan karakter rasa unik. Temukan cerita di balik setiap biji kopi Indonesia.</p>
           <a class="btn btn-primary" href="#showcase">Lihat Biji Kopi</a>
         </div>
       </section>
@@ -41,9 +38,8 @@
         <div class="container">
           <h2 class="section-title">Nusantara Coffee</h2>
           <p class="body">
-            Nusantara Coffee adalah website sederhana untuk menampilkan kekayaan biji kopi Indonesia.
-            Gunakan peta interaktif untuk melihat kopi-kopi khas dari setiap pulau, lalu jelajahi
-            showcase kami untuk detail rasa, aroma, dan asal usulnya.
+            Nusantara Coffee adalah website sederhana untuk menampilkan kekayaan biji kopi Indonesia. Gunakan peta interaktif untuk melihat kopi-kopi khas dari setiap pulau, lalu jelajahi showcase kami untuk detail rasa, aroma, dan asal
+            usulnya.
           </p>
         </div>
       </section>
@@ -54,11 +50,7 @@
           <p class="muted">Arahkan kursor atau sentuh hotspot di peta untuk melihat beragam jenis kopi yang ada di indonesia.</p>
 
           <div class="map-wrapper">
-            <img
-              src="images/peta-silhouette-indonesia-map.jpg"
-              alt="Peta Indonesia siluet"
-              class="map-image"
-            />
+            <img src="images/peta-silhouette-indonesia-map.jpg" alt="Peta Indonesia siluet" class="map-image" />
             <button class="hotspot hs-sumatra" data-region="sumatra" aria-label="Sumatra"></button>
             <button class="hotspot hs-java" data-region="java" aria-label="Jawa"></button>
             <button class="hotspot hs-kalimantan" data-region="kalimantan" aria-label="Kalimantan"></button>
@@ -165,6 +157,18 @@
             </div>
           </form>
         </dialog>
+      </section>
+
+      <section class="comments-section">
+        <div class="container">
+          <h2 class="section-title">Komentar Pengunjung</h2>
+          <form id="comment-form" class="comment-form">
+            <input type="text" id="name" name="name" placeholder="Nama Anda" required />
+            <textarea id="comment" name="comment" placeholder="Tulis komentar..." required></textarea>
+            <button type="submit" class="btn btn-primary">Kirim Komentar</button>
+          </form>
+          <ul id="comments-list" class="comments-list"></ul>
+        </div>
       </section>
     </main>
 
