@@ -170,3 +170,20 @@ body {
     border: none;
   }
 }
+
+/* buat design foto slider */
+
+.article-slider {
+  position: relative;
+  margin: 1rem 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 300px; /* Tentukan tinggi slider */
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .article-slider {
+    height: 200px; /* Tinggi lebih pendek di perangkat kecil */
+  }
+}
