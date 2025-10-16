@@ -23,22 +23,22 @@ PENJELASAN HTML DAN CSS
 Struktur HTML diorganisasi dengan berfokus pada Semantic HTML5 untuk memastikan aksesibilitas, SEO, dan keterbacaan kode yang baik.
 
 Organisasi Utama
-Header (<header>): Berisi navigasi utama (<nav>) dan logo (.brand).
+Header : Berisi navigasi utama  dan logo .
 
-Main Content (<main>): Berisi semua konten unik halaman, dibagi menjadi beberapa <section> yang logis (Hero, Map, Showcase, Comments).
+Main Content : Berisi semua konten unik halaman, dibagi menjadi beberapa section yang logis (Hero, Map, Showcase, Comments).
 
-Footer (<footer>): Berisi informasi hak cipta.
+Footer : Berisi informasi hak cipta.
 
 Penggunaan Elemen Penting
-index.html: Menggunakan <section> untuk memisahkan fitur utama (hero, peta, showcase) dan <article> serta elemen grid untuk menampilkan detail kopi.
+index.html: Menggunakan section untuk memisahkan fitur utama (hero, peta, showcase) dan article serta elemen grid untuk menampilkan detail kopi.
 
 Fitur interaktif seperti peta menggunakan elemen button (.hotspot) dengan atribut data-region untuk memudahkan interaksi JavaScript.
 
 Modal detail kopi diimplementasikan menggunakan elemen <dialog> yang merupakan praktik terbaik HTML5 modern.
 
-article.html: Menggunakan elemen <article> sebagai wadah utama untuk konten editorial dan (<h2>) hingga (<h4>) untuk hierarki judul yang tepat.
+article.html : Menggunakan elemen article sebagai wadah utama untuk konten editorial dan h2 hingga h4 untuk hierarki judul yang tepat.
 
-Fitur baru Article Slider diimplementasikan menggunakan <div> dengan kelas .article-slider dan navigasi tombol (.slider-btn) untuk kontrol manual.
+Fitur baru Article Slider diimplementasikan menggunakan div dengan kelas .article-slider dan navigasi tombol .slider-btn untuk kontrol manual.
 
 Atribut Khusus: Penggunaan atribut aria-label pada elemen navigasi dan tombol untuk meningkatkan aksesibilitas bagi pengguna screen reader.
 
