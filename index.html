@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
   <head>
     <meta charset="utf-8" />
@@ -17,6 +17,7 @@
       <nav class="nav">
         <a href="index.html" class="nav-link is-active" aria-current="page">Beranda</a>
         <a href="contact.html" class="nav-link">Tentang Kami</a>
+        <a href="article.html" class="nav-link">Artikel Kopi</a>
       </nav>
     </header>
 
@@ -29,10 +30,7 @@
         </div>
         <div class="hero-inner">
           <h1 class="hero-title">Jelajah Kopi Nusantara</h1>
-          <p class="hero-subtitle text-pretty">
-            Dari Sabang sampai Merauke, setiap pulau menghadirkan karakter rasa unik. Temukan cerita di balik
-            setiap biji kopi Indonesia.
-          </p>
+          <p class="hero-subtitle text-pretty">Dari Sabang sampai Merauke, setiap pulau menghadirkan karakter rasa unik. Temukan cerita di balik setiap biji kopi Indonesia.</p>
           <a class="btn btn-primary" href="#showcase">Lihat Biji Kopi</a>
         </div>
       </section>
@@ -41,9 +39,8 @@
         <div class="container">
           <h2 class="section-title">Nusantara Coffee</h2>
           <p class="body">
-            Nusantara Coffee adalah website sederhana untuk menampilkan kekayaan biji kopi Indonesia.
-            Gunakan peta interaktif untuk melihat kopi-kopi khas dari setiap pulau, lalu jelajahi
-            showcase kami untuk detail rasa, aroma, dan asal usulnya.
+            Nusantara Coffee adalah website sederhana untuk menampilkan kekayaan biji kopi Indonesia. Gunakan peta interaktif untuk melihat kopi-kopi khas dari setiap pulau, lalu jelajahi showcase kami untuk detail rasa, aroma, dan asal
+            usulnya.
           </p>
         </div>
       </section>
@@ -54,11 +51,7 @@
           <p class="muted">Arahkan kursor atau sentuh hotspot di peta untuk melihat beragam jenis kopi yang ada di indonesia.</p>
 
           <div class="map-wrapper">
-            <img
-              src="images/peta-silhouette-indonesia-map.jpg"
-              alt="Peta Indonesia siluet"
-              class="map-image"
-            />
+            <img src="images/peta-silhouette-indonesia-map.jpg" alt="Peta Indonesia siluet" class="map-image" />
             <button class="hotspot hs-sumatra" data-region="sumatra" aria-label="Sumatra"></button>
             <button class="hotspot hs-java" data-region="java" aria-label="Jawa"></button>
             <button class="hotspot hs-kalimantan" data-region="kalimantan" aria-label="Kalimantan"></button>
@@ -75,9 +68,19 @@
       <section id="showcase" class="showcase">
         <div class="container">
           <h2 class="section-title">Showcase Biji Kopi</h2>
+      <!-- Filter Tabs -->
+          <div class="tabs" role="tablist" aria-label="Filter kategori">
+            <button role="tab" class="tab is-active" data-filter="all" aria-selected="true">Semua</button>
+            <button role="tab" class="tab" data-filter="sumatra">Sumatra</button>
+            <button role="tab" class="tab" data-filter="java">Jawa</button>
+            <button role="tab" class="tab" data-filter="sulawesi">Sulawesi</button>
+            <button role="tab" class="tab" data-filter="baliNtt">Bali</button>
+            <button role="tab" class="tab" data-filter="kalimantan">NTT</button>
+            <button role="tab" class="tab" data-filter="papua">Papua</button>
+            <button role="tab" class="tab" data-filter="maluku">Maluku</button>
 
           <div class="grid">
-            <article class="card" data-coffee-id="gayo">
+            <article class="card" data-coffee-id="gayo" data-category="sumatra">
               <img src="images/coffee-beans-sumatra-gayo.jpg" alt="Biji kopi Sumatra Gayo" class="card-img" />
               <div class="card-body">
                 <h3 class="card-title">Sumatra Gayo</h3>
@@ -86,7 +89,7 @@
               </div>
             </article>
 
-            <article class="card" data-coffee-id="lintong">
+            <article class="card" data-coffee-id="lintong"data-category="sumatra">
               <img src="images/coffee-beans-lintong.jpg" alt="Biji kopi Lintong" class="card-img" />
               <div class="card-body">
                 <h3 class="card-title">Lintong</h3>
@@ -95,7 +98,7 @@
               </div>
             </article>
 
-            <article class="card" data-coffee-id="java-preanger">
+            <article class="card" data-coffee-id="java-preanger" data-category="java">
               <img src="images/coffee-beans-java-preanger.jpg" alt="Biji kopi Java Preanger" class="card-img" />
               <div class="card-body">
                 <h3 class="card-title">Java Preanger</h3>
@@ -104,7 +107,7 @@
               </div>
             </article>
 
-            <article class="card" data-coffee-id="ijen-raung">
+            <article class="card" data-coffee-id="ijen-raung" data-category="java">
               <img src="images/coffee-beans-ijen-raung.jpg" alt="Biji kopi Ijen Raung" class="card-img" />
               <div class="card-body">
                 <h3 class="card-title">Ijen Raung</h3>
@@ -113,7 +116,7 @@
               </div>
             </article>
 
-            <article class="card" data-coffee-id="bali-kintamani">
+            <article class="card" data-coffee-id="bali-kintamani" data-category="bali">
               <img src="images/coffee-beans-bali-kintamani.jpg" alt="Biji kopi Bali Kintamani" class="card-img" />
               <div class="card-body">
                 <h3 class="card-title">Bali Kintamani</h3>
@@ -122,7 +125,7 @@
               </div>
             </article>
 
-            <article class="card" data-coffee-id="flores-bajawa">
+            <article class="card" data-coffee-id="flores-bajawa" data-category="ntt">
               <img src="images/coffee-beans-flores-bajawa.jpg" alt="Biji kopi Flores Bajawa" class="card-img" />
               <div class="card-body">
                 <h3 class="card-title">Flores Bajawa</h3>
@@ -131,7 +134,7 @@
               </div>
             </article>
 
-            <article class="card" data-coffee-id="toraja">
+            <article class="card" data-coffee-id="toraja" data-category="sulawesi">
               <img src="images/coffee-beans-toraja.jpg" alt="Biji kopi Toraja" class="card-img" />
               <div class="card-body">
                 <h3 class="card-title">Toraja</h3>
@@ -140,7 +143,7 @@
               </div>
             </article>
 
-            <article class="card" data-coffee-id="papua-wamena">
+            <article class="card" data-coffee-id="papua-wamena" data-category="papua">
               <img src="images/coffee-beans-papua-wamena.jpg" alt="Biji kopi Papua Wamena" class="card-img" />
               <div class="card-body">
                 <h3 class="card-title">Papua Wamena</h3>
@@ -165,6 +168,18 @@
             </div>
           </form>
         </dialog>
+      </section>
+
+      <section class="comments-section">
+        <div class="container">
+          <h2 class="section-title">Komentar Pengunjung</h2>
+          <form id="comment-form" class="comment-form">
+            <input type="text" id="name" name="name" placeholder="Nama Anda" required />
+            <textarea id="comment" name="comment" placeholder="Tulis komentar..." required></textarea>
+            <button type="submit" class="btn btn-primary">Kirim Komentar</button>
+          </form>
+          <ul id="comments-list" class="comments-list"></ul>
+        </div>
       </section>
     </main>
 
