@@ -52,7 +52,7 @@ const coffeeDetail = [
     id: "liberika",
     name: "Liberika Kayong",
     origin: "Kalimantan Barat",
-    image: "images/coffee-beans-liberika.jpg",
+    image: "images/liberika-kayong.jpg",
     desc: "Kopi Liberika Kayong memiliki karakter unik dengan aroma yang kuat dan rasa yang bold.",
     notes: ["Aroma kuat", "Rasa bold", "Body penuh", "Aftertaste panjang"],
   },
